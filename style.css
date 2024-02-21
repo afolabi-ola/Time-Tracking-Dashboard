@@ -28,6 +28,7 @@ body {
   justify-content: center;
 
   padding: 20px;
+  margin-top: 40px;
 }
 .profile {
   min-height: 100%;
@@ -86,6 +87,7 @@ body {
   border-radius: 10px;
   background-color: hsl(15, 100%, 70%);
   width: 170px;
+  height: 130px;
 }
 .activity-work {
   background-color: hsl(235, 46%, 20%);
@@ -125,6 +127,7 @@ body {
   border-radius: 10px;
   background-color: hsl(195, 74%, 62%);
   width: 170px;
+  height: 130px;
 }
 .activity-play {
   background-color: hsl(235, 46%, 20%);
@@ -192,6 +195,7 @@ body {
   border-radius: 10px;
   background-color: hsl(264, 64%, 52%);
   width: 170px;
+  height: 130px;
 }
 .activity-social {
   background-color: hsl(235, 46%, 20%);
@@ -222,9 +226,10 @@ body {
 /*ACTIVITY 6 */
 
 .activity6 {
-  border-radius: 10px;
+  border-radius: 20px;
   background-color: hsl(43, 84%, 65%);
   width: 170px;
+  height: 130px;
 }
 .activity-self {
   background-color: hsl(235, 46%, 20%);
@@ -260,6 +265,7 @@ body {
   border-radius: 10px;
   background-color: hsl(145, 58%, 55%);
   width: 170px;
+  height: 130px;
 }
 .activity-exercise {
   background-color: hsl(235, 46%, 20%);
