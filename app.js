@@ -23,7 +23,7 @@ const playPreviousHrs = document.querySelector(".play-previous-hours");
 const studyPreviousHrs = document.querySelector(".study-previous-hours");
 const exercisePreviousHrs = document.querySelector(".exercise-previous-hours");
 const socialPreviousHrs = document.querySelector(".social-previous-hours");
-const selfCarePreviousHrs = document.querySelector(".self-previous-hours");
+const selfCarePreviousHrs = document.querySelector(".self
 
 const alertError = (errorType) => {
   alert(errorType);
@@ -47,3 +47,4 @@ const getExerciseData = async () => {
   }
 };
 getExerciseData();
+
