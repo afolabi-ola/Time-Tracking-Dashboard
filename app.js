@@ -4,6 +4,9 @@ const daily = document.querySelector(".Daily");
 const weekly = document.querySelector(".weekly");
 const monthly = document.querySelector(".Monthly");
 
+const actives = document.querySelectorAll(".active");
+
+
 //the titles
 const workTitle = document.querySelector(".work-text");
 const playTitle = document.querySelector(".play-text");
@@ -165,3 +168,5 @@ weekly.addEventListener("click", () => {
 monthly.addEventListener("click", () => {
   getMonthlyData();
 });
+
+
