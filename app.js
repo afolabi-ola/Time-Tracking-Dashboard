@@ -50,123 +50,122 @@ const getDatabase = async (url) => {
   return data;
 };
 
-window.addEventListener("DOMContentLoaded", () => {
-  getDailyData();
-});
+const getWorkDailyData = async (url) => {
+  const data = await getDatabase(urlWork);
+  workTitle.textContent = data.title;
+  workHrs.textContent = data.timeframes.daily.current;
+  workPreviousHrs.textContent = data.timeframes.daily.previous;
+};
 
-//Getting Daily Data
-const getDailyData = async () => {
-  const dataWork = await getDatabase(urlWork);
-  const dataPlay = await getDatabase(urlPlay);
-  const dataStudy = await getDatabase(urlStudy);
-  const dataExercise = await getDatabase(urlExercise);
-  const dataSocial = await getDatabase(urlSocial);
-  const dataSelfCare = await getDatabase(urlSelfCare);
+const getplayDailyData = async (url) => {
+  const data = await getDatabase(urlPlay);
+  playTitle.textContent = data.title;
+  playHrs.textContent = data.timeframes.daily.current;
+  playPreviousHrs.textContent = data.timeframes.daily.previous;
+};
 
-  workTitle.textContent = dataWork.title;
-  workHrs.textContent = dataWork.timeframes.daily.current;
-  workPreviousHrs.textContent = dataWork.timeframes.daily.previous;
+const getStudyDailyData = async (url) => {
+  const data = await getDatabase(urlStudy);
+  studyTitle.textContent = data.title;
+  studyHrs.textContent = data.timeframes.daily.current;
+  studyPreviousHrs.textContent = data.timeframes.daily.previous;
+};
 
-  playTitle.textContent = dataPlay.title;
-  playHrs.textContent = dataPlay.timeframes.daily.current;
-  playPreviousHrs.textContent = dataPlay.timeframes.daily.previous;
+const getExerciseDailyData = async (url) => {
+  const data = await getDatabase(urlExercise);
+  exerciseTitle.textContent = data.title;
+  exerciseHrs.textContent = data.timeframes.daily.current;
+  exercisePreviousHrs.textContent = data.timeframes.daily.previous;
+};
 
-  studyTitle.textContent = dataStudy.title;
-  studyHrs.textContent = dataStudy.timeframes.daily.current;
-  studyPreviousHrs.textContent = dataStudy.timeframes.daily.previous;
+const getSocialDailyData = async (url) => {
+  const data = await getDatabase(urlSocial);
+  socialTitle.textContent = data.title;
+  socialHrs.textContent = data.timeframes.daily.current;
+  socialPreviousHrs.textContent = data.timeframes.daily.previous;
+};
 
-  exerciseTitle.textContent = dataExercise.title;
-  exerciseHrs.textContent = dataExercise.timeframes.daily.current;
-  exercisePreviousHrs.textContent = dataExercise.timeframes.daily.previous;
-
-  socialTitle.textContent = dataSocial.title;
-  socialHrs.textContent = dataSocial.timeframes.daily.current;
-  socialPreviousHrs.textContent = dataSocial.timeframes.daily.previous;
-
-  selfCareTitle.textContent = dataSelfCare.title;
-  selfCareHrs.textContent = dataSelfCare.timeframes.daily.current;
-  selfCarePreviousHrs.textContent = dataSelfCare.timeframes.daily.previous;
+const getSelfCareDailyData = async (url) => {
+  const data = await getDatabase(urlSelfCare);
+  selfCareTitle.textContent = data.title;
+  selfCareHrs.textContent = data.timeframes.daily.current;
+  selfCarePreviousHrs.textContent = data.timeframes.daily.previous;
 };
 
 //  Weekly  logic
-const getWeeklyData = async () => {
-  const dataWork = await getDatabase(urlWork);
-  const dataPlay = await getDatabase(urlPlay);
-  const dataStudy = await getDatabase(urlStudy);
-  const dataExercise = await getDatabase(urlExercise);
-  const dataSocial = await getDatabase(urlSocial);
-  const dataSelfCare = await getDatabase(urlSelfCare);
-
-  workTitle.textContent = dataWork.title;
-  workHrs.textContent = dataWork.timeframes.weekly.current;
-  workPreviousHrs.textContent = dataWork.timeframes.weekly.previous;
-
-  playTitle.textContent = dataPlay.title;
-  playHrs.textContent = dataPlay.timeframes.weekly.current;
-  playPreviousHrs.textContent = dataPlay.timeframes.weekly.previous;
-
-  studyTitle.textContent = dataStudy.title;
-  studyHrs.textContent = dataStudy.timeframes.weekly.current;
-  studyPreviousHrs.textContent = dataStudy.timeframes.weekly.previous;
-
-  exerciseTitle.textContent = dataExercise.title;
-  exerciseHrs.textContent = dataExercise.timeframes.weekly.current;
-  exercisePreviousHrs.textContent = dataExercise.timeframes.weekly.previous;
-
-  socialTitle.textContent = dataSocial.title;
-  socialHrs.textContent = dataSocial.timeframes.weekly.current;
-  socialPreviousHrs.textContent = dataSocial.timeframes.weekly.previous;
-
-  selfCareTitle.textContent = dataSelfCare.title;
-  selfCareHrs.textContent = dataSelfCare.timeframes.weekly.current;
-  selfCarePreviousHrs.textContent = dataSelfCare.timeframes.weekly.previous;
+const getWorkWeeklyData = async () => {
+  const data = await getDatabase(urlWork);
+  workTitle.textContent = data.title;
+  workHrs.textContent = data.timeframes.weekly.current;
+  workPreviousHrs.textContent = data.timeframes.weekly.previous;
 };
 
-//Getting monthly logic/data
-const getMonthlyData = async () => {
-  const dataWork = await getDatabase(urlWork);
-  const dataPlay = await getDatabase(urlPlay);
-  const dataStudy = await getDatabase(urlStudy);
-  const dataExercise = await getDatabase(urlExercise);
-  const dataSocial = await getDatabase(urlSocial);
-  const dataSelfCare = await getDatabase(urlSelfCare);
+const getPlayWeeklyData = async () => {
+  const data = await getDatabase(urlPlay);
+  playTitle.textContent = data.title;
+  playHrs.textContent = data.timeframes.weekly.current;
+  playPreviousHrs.textContent = data.timeframes.weekly.previous;
+};
 
-  workTitle.textContent = dataWork.title;
-  workHrs.textContent = dataWork.timeframes.monthly.current;
-  workPreviousHrs.textContent = dataWork.timeframes.monthly.previous;
+const getStudyWeeklyData = async () => {
+  const data = await getDatabase(urlStudy);
+  studyTitle.textContent = data.title;
+  studyHrs.textContent = data.timeframes.weekly.current;
+  studyPreviousHrs.textContent = data.timeframes.weekly.previous;
+};
 
-  playTitle.textContent = dataPlay.title;
-  playHrs.textContent = dataPlay.timeframes.monthly.current;
-  playPreviousHrs.textContent = dataPlay.timeframes.monthly.previous;
+const getExerciseWeeklyData = async () => {
+  const data = await getDatabase(urlExercise);
+  exerciseTitle.textContent = data.title;
+  exerciseHrs.textContent = data.timeframes.weekly.current;
+  exercisePreviousHrs.textContent = data.timeframes.weekly.previous;
+};
 
-  studyTitle.textContent = dataStudy.title;
-  studyHrs.textContent = dataStudy.timeframes.monthly.current;
-  studyPreviousHrs.textContent = dataStudy.timeframes.monthly.previous;
+const getSocialWeeklyData = async () => {
+  const data = await getDatabase(urlSocial);
+  socialTitle.textContent = data.title;
+  socialHrs.textContent = data.timeframes.weekly.current;
+  socialPreviousHrs.textContent = data.timeframes.weekly.previous;
+};
 
-  exerciseTitle.textContent = dataExercise.title;
-  exerciseHrs.textContent = dataExercise.timeframes.monthly.current;
-  exercisePreviousHrs.textContent =
-    dataExercise.timeframes.monthly.previexercise;
-
-  socialTitle.textContent = dataSocial.title;
-  socialHrs.textContent = dataSocial.timeframes.monthly.current;
-  socialPreviousHrs.textContent = dataSocial.timeframes.monthly.previous;
-
-  selfCareTitle.textContent = dataSelfCare.title;
-  selfCareHrs.textContent = dataSelfCare.timeframes.monthly.current;
-  selfCarePreviousHrs.textContent = dataSelfCare.timeframes.monthly.previous;
+const getSelfCareWeekyData = async () => {
+  const data = await getDatabase(urlSelfCare);
+  selfCareTitle.textContent = data.title;
+  selfCareHrs.textContent = data.timeframes.weekly.current;
+  selfCarePreviousHrs.textContent = data.timeframes.weekly.previous;
 };
 
 daily.addEventListener("click", () => {
-  getDailyData();
+  getWorkDailyData(urlWork);
+  getplayDailyData(urlPlay);
+  getStudyDailyData();
+  getExerciseDailyData();
+  getSocialDailyData();
+  getSelfCareDailyData();
 });
 
 weekly.addEventListener("click", () => {
-  getWeeklyData();
+  getWorkWeeklyData();
+  getPlayWeeklyData();
+  getStudyWeeklyData();
+  getExerciseWeeklyData();
+  getSocialWeeklyData();
+  getSelfCareWeekyData();
 });
 
-monthly.addEventListener("click", () => {
-  getMonthlyData();
-});
+// actives.forEach((active) => {
+//   active.addEventListener("click", () => {
+//     active.classList.remove("show");
+//     active.classList.add("show");
+//     console.log("clicked", active);
+//   });
+// });
+for (let i = 0; i < actives.length; i++) {
+  actives[i].addEventListener("click", () => {
+    for (let r = 0; r < actives.length; r++) {
+      actives[r].classList.remove("show");
+    }
+    actives[i].classList.add("show");
 
-
+  });
+}
