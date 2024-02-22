@@ -73,9 +73,9 @@ body {
   cursor: pointer;
   color: hsl(235, 45%, 61%);
 }
-/* .days-text p:hover {
+.days-text p:hover {
   color: white;
-} */
+}
 
 .activities {
   display: grid;
@@ -295,7 +295,7 @@ body {
   font-size: 12px;
 }
 .active.show {
-  color: red;
+  color: white;
 }
 /*      MEDIA SCREEN */
 
