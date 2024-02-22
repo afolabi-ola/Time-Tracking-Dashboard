@@ -47,6 +47,49 @@ const getDatabase = async (url) => {
   return data;
 };
 
+const getWorkDailyData = async (url) => {
+  const data = await getDatabase(urlWork);
+  workTitle.textContent = data.title;
+  workHrs.textContent = data.timeframes.daily.current;
+  workPreviousHrs.textContent = data.timeframes.daily.previous;
+};
+
+const getplayDailyData = async (url) => {
+  const data = await getDatabase(urlPlay);
+  playTitle.textContent = data.title;
+  playHrs.textContent = data.timeframes.daily.current;
+  playPreviousHrs.textContent = data.timeframes.daily.previous;
+};
+
+const getStudyDailyData = async (url) => {
+  const data = await getDatabase(urlStudy);
+  studyTitle.textContent = data.title;
+  studyHrs.textContent = data.timeframes.daily.current;
+  studyPreviousHrs.textContent = data.timeframes.daily.previous;
+};
+
+const getExerciseDailyData = async (url) => {
+  const data = await getDatabase(urlExercise);
+  exerciseTitle.textContent = data.title;
+  exerciseHrs.textContent = data.timeframes.daily.current;
+  exercisePreviousHrs.textContent = data.timeframes.daily.previous;
+};
+
+const getSocialDailyData = async (url) => {
+  const data = await getDatabase(urlSocial);
+  socialTitle.textContent = data.title;
+  socialHrs.textContent = data.timeframes.daily.current;
+  socialPreviousHrs.textContent = data.timeframes.daily.previous;
+};
+
+const getSelfCareDailyData = async (url) => {
+  const data = await getDatabase(urlSelfCare);
+  selfCareTitle.textContent = data.title;
+  selfCareHrs.textContent = data.timeframes.daily.current;
+  selfCarePreviousHrs.textContent = data.timeframes.daily.previous;
+};
+
+//  Weekly  logic
 const getWorkWeeklyData = async () => {
   const data = await getDatabase(urlWork);
   workTitle.textContent = data.title;
@@ -82,12 +125,21 @@ const getSocialWeeklyData = async () => {
   socialPreviousHrs.textContent = data.timeframes.weekly.previous;
 };
 
-const getSelfCareWeeklyData = async () => {
+const getSelfCareWeekyData = async () => {
   const data = await getDatabase(urlSelfCare);
   selfCareTitle.textContent = data.title;
   selfCareHrs.textContent = data.timeframes.weekly.current;
   selfCarePreviousHrs.textContent = data.timeframes.weekly.previous;
 };
+
+daily.addEventListener("click", () => {
+  getWorkDailyData(urlWork);
+  getplayDailyData(urlPlay);
+  getStudyDailyData();
+  getExerciseDailyData();
+  getSocialDailyData();
+  getSelfCareDailyData();
+});
 
 weekly.addEventListener("click", () => {
   getWorkWeeklyData();
@@ -95,5 +147,5 @@ weekly.addEventListener("click", () => {
   getStudyWeeklyData();
   getExerciseWeeklyData();
   getSocialWeeklyData();
-  getSelfCareWeeklyData();
+  getSelfCareWeekyData();
 });
